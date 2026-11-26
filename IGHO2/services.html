@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igho Godwin | Organic & Vegan Men’s Hairdressing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <style>
+        /* ===========================
+   FARO BLADE SERVICE PAGE
+=========================== */
+
+        .fb-page,
+        .fb-page * {
+            box-sizing: border-box;
+        }
+
+        .fb-page {
+            background: #fff;
+            color: #111;
+            width: 100%;
+            min-height: 100vh;
+            font-family: "Playfair Display", Georgia, serif;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+
+        .fb-header {
+            width: 100%;
+            min-height: 75px;
+            padding: 0 1%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #f1f1f1;
+            position: relative;
+            background: #fff;
+            z-index: 10;
+        }
+
+        .fb-logo {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 27px;
+            font-weight: 400;
+            text-decoration: none;
+            color: #111;
+            white-space: nowrap;
+        }
+
+        .fb-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            width: 58%;
+        }
+
+        .fb-nav a {
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #111;
+            transition: opacity .3s ease;
+        }
+
+        .fb-nav a:hover {
+            opacity: .5;
+        }
+
+        .fb-booking {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fb-phone {
+            font-size: 15px !important;
+            letter-spacing: 3px !important;
+            font-weight: 400 !important;
+        }
+
+        .fb-menu-btn {
+            border: none;
+            background: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: #111;
+        }
+
+        /* MOBILE MENU */
+
+        .fb-mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 25px 20px 30px;
+            border-bottom: 1px solid #ddd;
+            flex-direction: column;
+            gap: 25px;
+            z-index: 20;
+        }
+
+        .fb-mobile-menu.open {
+            display: flex;
+        }
+
+        .fb-mobile-menu a {
+            color: #111;
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* MAIN CONTENT */
+
+        .fb-main {
+            padding: 85px 1% 0;
+            width: 100%;
+        }
+
+        .fb-intro {
+            margin-bottom: 125px;
+        }
+
+        .fb-heading {
+            font-family: "DM Sans", sans-serif;
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 18px;
+        }
+
+        .fb-subheading {
+            font-size: 13px;
+            line-height: 1.45;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* SERVICE GRID */
+
+        .fb-services {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 5.6%;
+            width: 100%;
+        }
+
+        .fb-service {
+            min-width: 0;
+        }
+
+        .fb-image {
+            width: 100%;
+            overflow: hidden;
+            background: #f1f1f1;
+            margin-bottom: 22px;
+        }
+
+        .fb-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform .6s ease;
+        }
+
+        .fb-service:hover .fb-image img {
+            transform: scale(1.035);
+        }
+
+        /* Individual image proportions */
+
+        .fb-service:nth-child(1) .fb-image {
+            aspect-ratio: 0.75 / 1;
+        }
+
+        .fb-service:nth-child(2) .fb-image {
+            aspect-ratio: 1.2 / 1;
+        }
+
+        .fb-service:nth-child(3) .fb-image {
+            aspect-ratio: 0.75 / 1;
+        }
+
+        .fb-service:nth-child(4) .fb-image {
+            aspect-ratio: 1.2 / 1;
+        }
+
+        /* SERVICE TITLES */
+
+        .fb-service-title {
+            display: flex;
+            align-items: baseline;
+            gap: 22px;
+            margin-bottom: 13px;
+        }
+
+        .fb-service-number {
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .fb-service-title h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 19px;
+            font-weight: 400;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .fb-service-description {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 13px;
+            line-height: 1.45;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* FOOTER */
+
+        .fb-footer {
+            width: 100%;
+            padding: 120px 1% 25px;
+        }
+
+        .fb-footer-logo {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 25px;
+            font-weight: 400;
+            margin: 0 0 100px;
+        }
+
+        .fb-footer-content {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 0;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .fb-footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+        }
+
+        .fb-footer-social {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .fb-footer a {
+            color: #111;
+            text-decoration: none;
+            transition: opacity .3s ease;
+        }
+
+        .fb-footer a:hover {
+            opacity: .5;
+        }
+
+        .fb-footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 125px;
+            font-size: 12px;
+        }
+
+        .fb-footer-legal {
+            display: flex;
+            gap: 95px;
+        }
+
+        .fb-footer-copyright {
+            text-align: right;
+        }
+
+        /* ===========================
+   TABLET RESPONSIVENESS
+=========================== */
+
+        @media (max-width: 1024px) {
+
+            .fb-header {
+                min-height: 70px;
+                padding: 0 20px;
+            }
+
+            .fb-nav {
+                width: 70%;
+                gap: 20px;
+            }
+
+            .fb-nav a {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
+
+            .fb-main {
+                padding: 75px 20px 0;
+            }
+
+            .fb-intro {
+                margin-bottom: 85px;
+            }
+
+            .fb-services {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 65px 35px;
+            }
+
+            .fb-service:nth-child(1) .fb-image,
+            .fb-service:nth-child(3) .fb-image {
+                aspect-ratio: 0.85 / 1;
+            }
+
+            .fb-service:nth-child(2) .fb-image,
+            .fb-service:nth-child(4) .fb-image {
+                aspect-ratio: 1.2 / 1;
+            }
+
+            .fb-footer {
+                padding: 100px 20px 25px;
+            }
+        }
+
+        /* ===========================
+   MOBILE RESPONSIVENESS
+=========================== */
+
+        @media (max-width: 600px) {
+
+            .fb-header {
+                min-height: 68px;
+                padding: 0 18px;
+            }
+
+            .fb-logo {
+                font-size: 24px;
+            }
+
+            .fb-nav {
+                display: none;
+            }
+
+            .fb-menu-btn {
+                font-size: 11px;
+            }
+
+            .fb-main {
+                padding: 65px 18px 0;
+            }
+
+            .fb-intro {
+                margin-bottom: 55px;
+            }
+
+            .fb-heading {
+                font-size: 16px;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            .fb-subheading {
+                font-size: 13px;
+            }
+
+            /* Two-column service layout */
+
+            .ices {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 40px 16px;
+            }
+
+            .fb-image {
+                margin-bottom: 15px;
+            }
+
+            .fb-service:nth-child(1) .fb-image,
+            .fb-service:nth-child(3) .fb-image {
+                aspect-ratio: 0.75 / 1;
+            }
+
+            .fb-service:nth-child(2) .fb-image,
+            .fb-service:nth-child(4) .fb-image {
+                aspect-ratio: 0.85 / 1;
+            }
+
+            .fb-service-title {
+                gap: 8px;
+                margin-bottom: 9px;
+                flex-wrap: wrap;
+            }
+
+            .fb-service-number {
+                font-size: 10px;
+            }
+
+            .fb-service-title h2 {
+                font-size: 15px;
+                white-space: normal;
+            }
+
+            .fb-service-description {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+
+            /* FOOTER MOBILE */
+
+            .fb-footer {
+                padding: 85px 18px 25px;
+            }
+
+            .fb-footer-logo {
+                font-size: 23px;
+                margin-bottom: 55px;
+            }
+
+            .fb-footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+                font-size: 12px;
+            }
+
+            .fb-footer-contact {
+                gap: 35px;
+            }
+
+            .fb-footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 35px;
+                margin-top: 85px;
+                font-size: 11px;
+            }
+
+            .fb-footer-legal {
+                width: 100%;
+                justify-content: space-between;
+                gap: 15px;
+            }
+
+            .fb-footer-copyright {
+                text-align: left;
+                line-height: 1.6;
+            }
+        }
+
+        /* SMALL PHONES */
+
+        @media (max-width: 360px) {
+
+            .fb-services {
+                gap: 35px 12px;
+            }
+
+            .fb-service-title {
+                gap: 6px;
+            }
+
+            .fb-service-title h2 {
+                font-size: 14px;
+            }
+
+            .fb-service-description {
+                font-size: 11px;
+            }
+
+            .fb-footer-content {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+
+            <a href="./index.html" class="logo">IGHO GODWIN</a>
+
+            <nav class="header-nav">
+
+                <button class="nav-link" onclick="toggleModal('booking-modal')">
+                    <a href="https://ighogodwinsalong.bokadirekt.se/">BOOK YOUR CUT <span>↘</span></a>
+                </button>
+
+                <a class="phone-link" href="">
+                    STOCKHOLM, SWEDEN
+                </a>
+
+                <button class="nav-link" id="menu-btn" onclick="toggleMenu()">
+                    MENU
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MENU -->
+    <div class="full-menu" id="full-menu">
+
+        <div class="menu-header">
+            <!-- <span class="logo">Igho Godwin</span> -->
+
+            <button class="close-menu" onclick="toggleMenu()">
+                CLOSE [✕]
+            </button>
+        </div>
+
+        <div class="menu-content">
+
+            <div class="menu-navigation">
+                <a href="./services.html">SERVICES</a>
+                <a href="./artisian.html">THE ARTISAN</a>
+            </div>
+
+            <!-- <div class="menu-navigation">
+    
+                    <p class="section-label">NAVIGATION</p>
+    
+                    <ul>
+                        <li><a href="#statement" onclick="toggleMenu()">The Craft</a></li>
+                        <li><a href="#offerings" onclick="toggleMenu()">Offerings</a></li>
+                        <li><a href="#space" onclick="toggleMenu()">The Space</a></li>
+                        <li><a href="#testimonials" onclick="toggleMenu()">From Our Chairs</a></li>
+                        <li><a href="#visual-proof" onclick="toggleMenu()">Visual Proof</a></li>
+                    </ul>
+    
+                </div>
+    
+                <div class="menu-details">
+    
+                    <div>
+                        <p class="section-label">LOCATION</p>
+                        <p>500 Terry Francine St,</p>
+                        <p>San Francisco, CA 94158</p>
+                    </div>
+    
+                    <div>
+                        <p class="section-label">APPOINTMENTS & INQUIRIES</p>
+                        <p>123-456-7890</p>
+                        <p>info@mysite.com</p>
+                    </div>
+    
+                    <button class="white-button" onclick="bookFromMenu()">
+                        Book Appointment ↘
+                    </button>
+    
+                </div>
+            </div>
+    
+            <div class="menu-footer">
+                <span>© 2035 Faro Blade. All Rights Reserved.</span>
+                <span>San Francisco Atelier</span>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="fb-page">
+
+        <!-- MAIN SECTION -->
+        <main class="fb-main" id="services">
+
+            <section class="fb-intro">
+
+                <h1 class="fb-heading">OUR SERVICES</h1>
+
+                <p class="fb-subheading">
+                    Precision cuts. Conscious haircare.<br>
+                    MEN'S HAIRCUTS & GROOMING
+                </p>
+            </section>
+
+
+            <!-- SERVICE CARDS -->
+            <section class="fb-services">
+
+                <!-- SERVICE 01 -->
+                <article class="fb-service">
+
+                    <div class="fb-image">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=85"
+                            alt="Professional men's haircut" loading="lazy">
+                    </div>
+
+                    <div class="fb-service-title">
+                        <span class="fb-service-number">[01]</span>
+                        <h2>Scissor Haircut</h2>
+                    </div>
+
+                    <p class="fb-service-description">
+                        A personalised haircut experience, including consultation, hair wash, relaxing head massage,
+                        precision scissor cutting and styling.
+                    </p>
+
+                </article>
+
+
+                <!-- SERVICE 02 -->
+                <article class="fb-service">
+
+                    <div class="fb-image">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=85"
+                            alt="Men's beard grooming" loading="lazy">
+                    </div>
+
+                    <div class="fb-service-title">
+                        <span class="fb-service-number">[02]</span>
+                        <h2>Machine Haircut</h2>
+                    </div>
+
+                    <p class="fb-service-description">
+                        A clean and precise clipper haircut, including consultation, hair wash, relaxing head massage
+                        and finishing.
+                    </p>
+
+                </article>
+
+
+                <!-- SERVICE 03 -->
+                <article class="fb-service">
+
+                    <div class="fb-image">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=85"
+                            alt="Traditional straight razor shave" loading="lazy">
+                    </div>
+
+                    <div class="fb-service-title">
+                        <span class="fb-service-number">[03]</span>
+                        <h2>Haircut & Beard Trim</h2>
+                    </div>
+
+                    <p class="fb-service-description">
+                        A complete grooming experience combining a tailored haircut and beard trim, including
+                        consultation, hair wash, relaxing
+                        head massage and professional styling.
+                    </p>
+
+                </article>
+
+
+                <!-- SERVICE 04 -->
+                <article class="fb-service">
+
+                    <div class="fb-image">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=85"
+                            alt="Men's hair styling and color refresh" loading="lazy">
+                    </div>
+
+                    <div class="fb-service-title">
+                        <span class="fb-service-number">[04]</span>
+                        <h2>Beard Trim</h2>
+                    </div>
+
+                    <p class="fb-service-description">
+                        A carefully shaped and maintained beard, including consultation, trimming, detailing and
+                        finishing.
+                    </p>
+
+                </article>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+
+            <div class="footer-container">
+
+                <div class="footer-logo">
+                    <a href="#" class="logo">IGHO GODWIN</a>
+                </div>
+
+                <div class="footer-grid">
+
+                    <div>
+                        <p>Barnhusgatan 1, 111 23</p>
+                        <p>Stockholm, Sweden.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="https://www.facebook.com/share/1CR6LSZq3c/?mibextid=wwXIfr" target="_blank"
+                            rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.instagram.com/ighogodwin.se?rpxt=aXpucTRvZHdmMW42&utm_source=qr"
+                            target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.tiktok.com/@igho.godwin/" target="_blank"
+                            rel="noopener noreferrer">Tiktok</a>
+                    </div>
+
+                    <div>
+                        <a href="tel:+O76-750 65 30">O76-750 65 30
+                        </a>
+                        <a href="mailto:info@mysite.com"></a>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+                        © 2026 Igho Godwin. || Designed by
+                        <a href="#">MercyTheDev</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        (function () {
+
+            const mobileButton = document.getElementById("fbMobileBtn");
+            const mobileMenu = document.getElementById("fbMobileMenu");
+            const desktopButton = document.getElementById("fbMenuBtn");
+
+            function toggleMenu() {
+
+                const isOpen = mobileMenu.classList.toggle("open");
+
+                mobileButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+            }
+
+            mobileButton.addEventListener("click", toggleMenu);
+
+            // Desktop menu button opens the same navigation
+            desktopButton.addEventListener("click", function () {
+                toggleMenu();
+            });
+
+            // Close menu after selecting a navigation link
+            mobileMenu.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("open");
+                    mobileButton.setAttribute("aria-expanded", "false");
+                });
+
+            });
+
+            // Automatically update the current year
+            // Change 2035 to a fixed year if you prefer the screenshot exactly.
+            // document.getElementById("fbYear").textContent =
+            //     new Date().getFullYear();
+
+        })();
+
+    </script>
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>

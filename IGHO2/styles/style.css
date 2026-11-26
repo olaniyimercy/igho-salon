@@ -1,0 +1,1175 @@
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #0a0a0a;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.font-editorial,
+.logo,
+h1,
+h2,
+h3,
+blockquote,
+.service-item p,
+.gallery-caption {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+:root {
+  --black: #0a0a0a;
+  --dark: #141414;
+  --muted: #666;
+  --border: #e5e5e5;
+  --cream: #fafafa;
+}
+
+/* =========================================
+   2. REUSABLE STYLES
+========================================= */
+
+.section-label {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.light-label {
+  color: #000;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.text-button:hover {
+  opacity: 0.6;
+}
+
+.img-contrast {
+  filter: grayscale(100%) contrast(108%);
+  transition:
+    filter 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-contrast:hover {
+  filter: grayscale(100%) contrast(115%);
+}
+
+/* =========================================
+   3. HEADER
+========================================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.95); */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-container {
+  max-width: 1720px;
+  height: 96px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.nav-link,
+.phone-link {
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover,
+.phone-link:hover {
+  opacity: 0.6;
+}
+
+.nav-link span {
+  font-size: 15px;
+}
+
+.phone-link {
+  white-space: nowrap;
+}
+
+/* =========================================
+   4. FULL SCREEN MENU
+========================================= */
+
+.full-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #000;
+  color: #fff;
+  padding: 45px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.full-menu.active {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #292929;
+}
+
+.close-menu {
+  color: #999;
+  border: 1px solid #333;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.close-menu:hover {
+  color: #fff;
+}
+
+.menu-content {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menu-navigation {
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-navigation:hover {
+  text-decoration: underline;
+}
+
+/* .menu-navigation li {
+  margin-bottom: 12px;
+}
+
+.menu-navigation li a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(32px, 4vw, 55px);
+  transition: all 0.3s ease;
+}
+
+.menu-navigation li a:hover {
+  font-style: italic;
+  padding-left: 15px;
+}
+
+.menu-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 35px;
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.menu-details .section-label {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.white-button {
+  background: #fff;
+  color: #000;
+  padding: 18px 30px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  width: fit-content;
+}
+
+.white-button:hover {
+  background: #ddd;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 25px;
+  border-top: 1px solid #222;
+  color: #666;
+  font-size: 11px;
+} */
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.hero-section {
+  max-width: 1720px;
+  margin: auto;
+  /* padding: 32px 56px 90px; */
+  border-bottom: 1px solid #eee;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.hero-image-left {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.hero-image-left img {
+  object-position: left;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.hero-heading {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 30px;
+  padding-bottom: 55px;
+}
+
+.hero-heading h1 {
+  font-size: clamp(55px, 6vw, 75px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.hero-description {
+  padding-top: 10px;
+}
+
+.hero-description p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.hero-bottom-image {
+  width: 100%;
+  aspect-ratio: 12 / 10;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.hero-bottom-image img {
+  object-position: right;
+}
+
+/* =========================================
+   6. STATEMENT SECTION
+========================================= */
+
+.statement-section {
+  max-width: 1720px;
+  margin: auto;
+  padding: 140px 20px;
+}
+
+.statement-content {
+  max-width: 1100px;
+}
+
+.statement-content .section-label {
+  margin-bottom: 10px;
+}
+
+.statement-content h2 {
+  font-size: clamp(35px, 4vw, 55px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================
+   7. OFFERINGS SECTION
+========================================= */
+
+.section {
+  max-width: 1720px;
+  margin: auto;
+  padding: 0 56px 140px;
+  border-bottom: 1px solid #eee;
+}
+
+.section-heading {
+  padding: 0px 20px;
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 84px;
+  padding: 0 1rem ;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f0f0f0;
+  margin-bottom: 22px;
+}
+
+.service-item:hover img {
+  transform: scale(1.05);
+}
+
+.service-title {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.service-title span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #666;
+}
+
+.service-title h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.service-item > p {
+  font-size: 19px;
+  color: #555;
+  line-height: 1.3;
+}
+
+/* =========================================
+   8. SPACE SECTION
+========================================= */
+
+.space-section {
+  max-width: 1720px;
+  margin: auto;
+  padding: 120px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.space-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.space-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.space-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  padding-left: 15px;
+}
+
+.space-content .section-label {
+  margin-bottom: 30px;
+}
+
+.space-content h2 {
+  font-size: clamp(35px, 3.8vw, 54px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* =========================================
+   9. TESTIMONIALS
+========================================= */
+
+.testimonials-section {
+  max-width: 1720px;
+  margin: auto;
+  padding: 120px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.testimonial-title {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.testimonial-title span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: #666;
+}
+
+.testimonial-title h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.testimonial blockquote {
+  font-size: 22px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* =========================================
+   10. VISUAL PROOF / GALLERY
+========================================= */
+
+.visual-proof-section {
+  max-width: 1720px;
+  margin: auto;
+  padding: 120px 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px;
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 0.9 / .7;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.extend {
+  aspect-ratio: 1/ 1.5;
+}
+
+.gallery-caption {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-size: 23px;
+}
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.main-footer {
+  border-top: 1px solid #eee;
+  padding: 90px 0 45px;
+}
+
+.footer-container {
+  max-width: 1720px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  margin-bottom: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding-bottom: 90px;
+}
+
+.footer-grid p,
+.footer-grid a {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-grid a:hover,
+.footer-bottom a:hover {
+  opacity: 0.6;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+}
+
+.footer-bottom > div {
+  display: flex;
+  gap: 45px;
+}
+
+.footer-bottom p a {
+  text-decoration: underline;
+}
+
+/* =========================================
+   12. MODALS
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-heading {
+  margin-bottom: 30px;
+}
+
+.modal-heading .section-label {
+  margin-bottom: 10px;
+}
+
+.modal-heading h3,
+.space-modal-content h3 {
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.modal-heading > p:last-child {
+  margin-top: 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #666;
+}
+
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-group label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  font-size: 13px;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #000;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 17px;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #333;
+}
+
+/* =========================================
+   13. SPACE MODAL
+========================================= */
+
+.space-modal-content {
+  max-width: 600px;
+}
+
+.space-modal-content > .section-label {
+  margin-bottom: 10px;
+}
+
+.space-modal-content h3 {
+  margin-bottom: 25px;
+}
+
+.space-modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.space-modal-text p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.space-modal-footer {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.space-modal-footer span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: #777;
+}
+
+.space-modal-footer button {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* =========================================
+   14. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+  .header-container,
+  .hero-section,
+  .statement-section,
+  .offerings-section,
+  .space-section,
+  .testimonials-section,
+  .visual-proof-section,
+  .footer-container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero-heading {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hero-heading h1 {
+    font-size: 65px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 30px;
+  }
+
+  .space-grid {
+    gap: 35px;
+  }
+
+  .space-content h2 {
+    font-size: 38px;
+  }
+
+  .testimonials-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    height: 80px;
+    padding: 0 25px;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  .header-nav {
+    gap: 25px;
+  }
+
+  .phone-link {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .full-menu {
+    padding: 30px 25px;
+    overflow-y: auto;
+  }
+
+  .menu-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 45px 0;
+  }
+
+  .menu-navigation li a {
+    font-size: 38px;
+  }
+
+  .menu-footer {
+    font-size: 10px;
+  }
+
+  .hero-section {
+    padding: 20px 25px 65px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-image-left {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-right {
+    padding-top: 0;
+  }
+
+  .hero-heading {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  .hero-heading h1 {
+    font-size: clamp(45px, 8vw, 65px);
+  }
+
+  .hero-description p {
+    font-size: 19px;
+  }
+
+  .statement-section {
+    padding: 90px 25px;
+  }
+
+  .statement-content .section-label {
+    margin-bottom: 30px;
+  }
+
+  .statement-content h2 {
+    font-size: 37px;
+  }
+
+  .offerings-section {
+    padding: 0 25px 90px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    gap: 40px 20px;
+  }
+
+  .service-title {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .service-title h3 {
+    font-size: 22px;
+  }
+
+  .service-item > p {
+    font-size: 17px;
+  }
+
+  .space-section {
+    padding: 90px 25px;
+  }
+
+  .space-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .space-image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .space-content {
+    padding-left: 0;
+    gap: 35px;
+  }
+
+  .space-content h2 {
+    font-size: 38px;
+  }
+
+  .testimonials-section {
+    padding: 90px 25px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .testimonial blockquote {
+    font-size: 21px;
+  }
+
+  .visual-proof-section {
+    padding: 90px 25px;
+  }
+
+  .gallery {
+    gap: 60px;
+  }
+
+  .gallery-row {
+    gap: 25px;
+  }
+
+  .gallery-caption {
+    font-size: 20px;
+  }
+
+  .footer-container {
+    padding: 0 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .header-nav {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .full-menu {
+    padding: 25px 20px;
+  }
+
+  .menu-navigation li a {
+    font-size: 34px;
+  }
+
+  .menu-footer {
+    flex-direction: column;
+  }
+
+  .hero-section,
+  .statement-section,
+  .offerings-section,
+  .space-section,
+  .testimonials-section,
+  .visual-proof-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-heading h1 {
+    font-size: 53px;
+  }
+
+  .hero-description p {
+    font-size: 20px;
+  }
+
+  .statement-content h2 {
+    font-size: 32px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .service-title h3 {
+    font-size: 25px;
+  }
+
+  .space-content h2 {
+    font-size: 33px;
+  }
+
+  .gallery-row {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-container {
+    padding: 0 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 55px;
+  }
+
+  .footer-logo {
+    margin-bottom: 50px;
+  }
+
+  .footer-bottom > div {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modal-content {
+    padding: 45px 22px 25px;
+  }
+
+  .modal-heading h3,
+  .space-modal-content h3 {
+    font-size: 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .space-modal-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

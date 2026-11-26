@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Igho Godwin | Organic & Vegan Men’s Hairdressing</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+
+            <a href="./index.html" class="logo">IGHO GODWIN</a>
+
+            <nav class="header-nav">
+
+                <button class="nav-link" onclick="toggleModal('booking-modal')">
+                   <a href="https://ighogodwinsalong.bokadirekt.se/">BOOK YOUR CUT <span>↘</span></a> 
+                </button>
+
+                <a class="phone-link" href="">
+                    STOCKHOLM, SWEDEN
+                </a>
+
+                <button class="nav-link" id="menu-btn" onclick="toggleMenu()">
+                    MENU
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- FULL SCREEN MENU -->
+    <div class="full-menu" id="full-menu">
+
+        <div class="menu-header">
+            <!-- <span class="logo">Igho Godwin</span> -->
+
+            <button class="close-menu" onclick="toggleMenu()">
+                CLOSE [✕]
+            </button>
+        </div>
+
+        <div class="menu-content">
+
+            <div class="menu-navigation">
+                <a href="./services.html">SERVICES</a>
+                <a href="./artisian.html">THE ARTISAN</a>
+            </div>
+
+            <!-- <div class="menu-navigation">
+
+                <p class="section-label">NAVIGATION</p>
+
+                <ul>
+                    <li><a href="#statement" onclick="toggleMenu()">The Craft</a></li>
+                    <li><a href="#offerings" onclick="toggleMenu()">Offerings</a></li>
+                    <li><a href="#space" onclick="toggleMenu()">The Space</a></li>
+                    <li><a href="#testimonials" onclick="toggleMenu()">From Our Chairs</a></li>
+                    <li><a href="#visual-proof" onclick="toggleMenu()">Visual Proof</a></li>
+                </ul>
+
+            </div>
+
+            <div class="menu-details">
+
+                <div>
+                    <p class="section-label">LOCATION</p>
+                    <p>500 Terry Francine St,</p>
+                    <p>San Francisco, CA 94158</p>
+                </div>
+
+                <div>
+                    <p class="section-label">APPOINTMENTS & INQUIRIES</p>
+                    <p>123-456-7890</p>
+                    <p>info@mysite.com</p>
+                </div>
+
+                <button class="white-button" onclick="bookFromMenu()">
+                    Book Appointment ↘
+                </button>
+
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <span>© 2035 Faro Blade. All Rights Reserved.</span>
+            <span>San Francisco Atelier</span>
+        </div> -->
+        </div>
+    </div>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+
+            <div class="hero-grid">
+
+                <div class="hero-image-left">
+                    <img src="./images/Afro faro.avif" alt="Barber executing a precise straight razor neckline shave"
+                        class="img-contrast">
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-heading">
+
+                        <div>
+                            <h1>A better<br>Way to Groom</h1>
+                        </div>
+
+                        <div class="hero-description">
+
+                            <p>
+                                Expert Men's hairdressing and barbering, combining precision, craftsmanship and a
+                                conscious approach to haircare.
+                                <br>
+                                Professional grooming with organic and vegan products. Thoughtful care, individual
+                                attention and result that speak for
+                                themselves.
+                            </p>
+
+                            <button class="nav-link" onclick="toggleModal('booking-modal')">
+                                <a href="https://ighogodwinsalong.bokadirekt.se/">BOOK YOUR CUT <span>↘</span></a>    </button>
+
+                        </div>
+                    </div>
+
+                    <div class="hero-bottom-image">
+                        <img src="./images/Afro faro.avif" alt="Precision haircut shears" class="img-contrast">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- STATEMENT SECTION -->
+        <section class="statement-section" id="statement">
+
+            <div class="statement-content">
+
+                <p class="section-label light-label">
+                    THE ART OF CONSCIOUS GROOMING
+                </p>
+
+                <h2>
+                    A great haircut is more than appearance. It is about confidence, individuality and the details that
+                    make a difference. At <em>IGHO GODWIN</em> , I combine 12 years of professional hairdressing experience with a
+                    commitment to organic and vegan haircare. Every haircut is approached with precision, purpose and
+                    respect for the hair.
+                </h2>
+
+            </div>
+        </section>
+
+
+        <!-- OFFERINGS SECTION -->
+        <section class="offerings-section" id="offerings">
+
+            <div class="section-heading">
+                <p class="section-label">OUR CORE OFFERINGS</p>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service-item">
+
+                    <div class="service-image">
+                        <img src="./images/Afro faro.avif" alt="The Faro Cut" class="img-contrast">
+                    </div>
+
+                    <div class="service-title">
+                        <span>[01]</span>
+                        <h3>The Faro Cut</h3>
+                    </div>
+
+                    <p>Our signature precision haircut, shaped and textured for lasting structure.</p>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-image">
+                        <img src="./images/Afro faro.avif" alt="Beard Sculpting" class="img-contrast">
+                    </div>
+
+                    <div class="service-title">
+                        <span>[02]</span>
+                        <h3>Beard Sculpting</h3>
+                    </div>
+
+                    <p>Meticulous trimming and shaping to define and enhance your features.</p>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-image">
+                        <img src="./images/Afro faro.avif" alt="Hot Towel Shave" class="img-contrast">
+                    </div>
+
+                    <div class="service-title">
+                        <span>[03]</span>
+                        <h3>Hot Towel Shave</h3>
+                    </div>
+
+                    <p>A classic ritual for the closest, most refreshing shave.</p>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-image">
+                        <img src="./images/Afro faro.avif" alt="Color Refresh" class="img-contrast">
+                    </div>
+
+                    <div class="service-title">
+                        <span>[04]</span>
+                        <h3>Color Refresh</h3>
+                    </div>
+
+                    <p>Subtle, natural-looking color blending for a revitalized appearance.</p>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- SPACE SECTION -->
+        <section class="space-section" id="space">
+
+            <div class="space-grid">
+
+                <div class="space-image">
+                    <img src="./images/Afro faro.avif" alt="Minimalist luxury barber chair" class="img-contrast">
+                </div>
+
+                <div class="space-content">
+
+                    <div>
+                        <p class="section-label light-label">
+                            A SPACE DEFINED BY DETAIL
+                        </p>
+
+                        <h2>
+                            Our shop is a tranquil, light-filled environment designed for focus and relaxation. Every
+                            element is curated to provide a seamless and premium grooming experience from start to
+                            finish.
+                        </h2>
+                    </div>
+
+                    <button class="text-button" onclick="oggleModal('space-modal')">
+                        <a href="./artisian.html">READ MORE <span>↘</span></a>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials-section" id="testimonials">
+
+            <div class="section-heading">
+                <p class="section-label">FROM OUR CHAIRS</p>
+            </div>
+
+            <div class="testimonials-grid">
+
+                <article class="testimonial">
+                    <div class="testimonial-title">
+                        <span>[27.08.35]</span>
+                        <h3>Julien Dubois</h3>
+                    </div>
+
+                    <blockquote>
+                        “The atmosphere at Faro Blade is serene and invigorating. The staff are consummate
+                        professionals. You leave not just looking your best, but feeling rejuvenated and refreshed.”
+                    </blockquote>
+                </article>
+
+
+                <article class="testimonial">
+                    <div class="testimonial-title">
+                        <span>[02.04.35]</span>
+                        <h3>Lars VanderMeer</h3>
+                    </div>
+
+                    <blockquote>
+                        “I've been a loyal client of Faro Blade for years, and I can confidently say that Kaelen is an
+                        absolute master of their craft. Their attention to detail is unparalleled, and they consistently
+                        deliver the best haircuts I've ever experienced.”
+                    </blockquote>
+                </article>
+
+
+                <article class="testimonial">
+                    <div class="testimonial-title">
+                        <span>[16.02.35]</span>
+                        <h3>Julien Dubois</h3>
+                    </div>
+
+                    <blockquote>
+                        “I've been searching for a barber that truly gets it, and I've finally found it. Faro Blade's
+                        attention to detail is unmatched, and their commitment to excellence is evident in every cut and
+                        shave.”
+                    </blockquote>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- VISUAL PROOF -->
+        <section class="visual-proof-section" id="visual-proof">
+
+            <div class="section-heading">
+                <p class="section-label">VISUAL PROOF</p>
+            </div>
+
+            <div class="gallery">
+
+                <div class="gallery-row">
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./images/Afro faro.avif" alt="Short Afro" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Short Afro</span>
+                            <span>01</span>
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-item">
+                        <div class="gallery-image extend">
+                            <img src="./images/Afro faro.avif" alt="Soft Fringe" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Soft Fringe</span>
+                            <span>02</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-row">
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./images/Afro faro.avif" alt="Curls" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Curls</span>
+                            <span>03</span>
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-item">
+                        <div class="gallery-image extend">
+                            <img src="./images/Afro faro.avif" alt="Structured Crop" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Structured Crop</span>
+                            <span>04</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="gallery-row">
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./images/Afro faro.avif" alt="Curls" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Curls</span>
+                            <span>05</span>
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-item">
+                        <div class="gallery-image extend">
+                            <img src="./images/Afro faro.avif" alt="Structured Crop" class="img-contrast">
+                        </div>
+
+                        <div class="gallery-caption">
+                            <span>Structured Crop</span>
+                            <span>06</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+    
+        <div class="footer-container">
+    
+            <div class="footer-logo">
+                <a href="#" class="logo">IGHO GODWIN</a>
+            </div>
+    
+            <div class="footer-grid">
+    
+                <div>
+                    
+                    <p> Barnhusgatan 1, 111 23</p>
+                    <p>Stockholm, Sweden.</p>
+                </div>
+    
+                <div class="footer-links">
+                    <a href="https://www.facebook.com/share/1CR6LSZq3c/?mibextid=wwXIfr" target="_blank"
+                        rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com/ighogodwin.se?rpxt=aXpucTRvZHdmMW42&utm_source=qr" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.tiktok.com/@igho.godwin/" target="_blank" rel="noopener noreferrer">Tiktok</a>
+                </div>
+    
+                <div>
+                    <a href="tel:+O76-750 65 30">O76-750 65 30
+                    </a>
+                    <a href="mailto:info@mysite.com"></a>
+                </div>
+    
+            </div>
+    
+            <div class="footer-bottom">
+    
+                <p>
+                    © 2026 Igho Godwin. || Designed by
+                    <a href="#">MercyTheDev</a>
+                </p>
+    
+            </div>
+    
+        </div>
+    </footer>
+
+
+    <!-- BOOKING MODAL -->
+    <!-- <div class="modal-overlay" id="booking-modal">
+
+        <div class="modal-content">
+
+            <button class="modal-close" onclick="toggleModal('booking-modal')">
+                [CLOSE]
+            </button>
+
+            <div class="modal-heading">
+                <p class="section-label light-label">RESERVATION</p>
+                <h3>Book Your Cut</h3>
+                <p>Select your desired service and preferred timing.</p>
+            </div>
+
+            <form id="booking-form">
+
+                <div class="form-group">
+                    <label for="service">SERVICE</label>
+
+                    <select id="service" required>
+                        <option>The Faro Cut — $75</option>
+                        <option>Beard Sculpting — $50</option>
+                        <option>Hot Towel Shave — $60</option>
+                        <option>Color Refresh — $85</option>
+                        <option>The Complete Ritual (Cut + Shave) — $125</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="date">DATE</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">TIME</label>
+                        <input type="time" id="time" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">FULL NAME</label>
+                    <input type="text" id="fullname" placeholder="Julien Dubois" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="phone" placeholder="(123) 456-7890" required>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Confirm Appointment ↘
+                </button>
+
+            </form>
+
+        </div>
+    </div> -->
+
+
+    <!-- SPACE MODAL -->
+    <!-- <div class="modal-overlay" id="space-modal">
+
+        <div class="modal-content space-modal-content">
+
+            <button class="modal-close" onclick="toggleModal('space-modal')">
+                [CLOSE]
+            </button>
+
+            <p class="section-label light-label">OUR ATELIER</p>
+
+            <h3>Designed For Precision</h3>
+
+            <div class="space-modal-text">
+
+                <p>
+                    Founded on the philosophy of understated Japanese minimalism and classic British barber traditions,
+                    Faro—Blade was built from natural materials, acoustic sound baffles, and directional daylight.
+                </p>
+
+                <p>
+                    Each station features customized hydraulic Japanese Belmont chairs, filtered water systems, and
+                    bespoke tactile tools. We take one appointment at a time to ensure uninterrupted focus and calm.
+                </p>
+
+            </div>
+
+            <div class="space-modal-footer">
+
+                <span>San Francisco, California</span>
+
+                <button onclick="bookFromSpace()">
+                    Book a visit ↘
+                </button>
+
+            </div>
+
+        </div>
+    </div> -->
+
+
+    <!-- JAVASCRIPT -->
+    <script src="./scripts/script.js"></script>
+
+</body>
+
+</html>
