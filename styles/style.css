@@ -57,7 +57,7 @@ h3,
 blockquote,
 .service-item p,
 .gallery-caption {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  /* font-family: "Cormorant Garamond", Georgia, serif; */
 }
 
 ::selection {
@@ -102,9 +102,10 @@ blockquote,
 
 .logo {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -1px;
   white-space: nowrap;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .text-button {
@@ -136,16 +137,30 @@ blockquote,
 /* =========================================
    3. HEADER
 ========================================= */
-
 .main-header {
+  position: fixedgit ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+}
+
+.hero-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* .main-header {
   position: sticky;
   top: 0;
   z-index: 40;
   width: 100%;
-  /* background: rgba(255, 255, 255, 0.95); */
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #f0f0f0;
-}
+} */
 
 .header-container {
   max-width: 1720px;
@@ -155,12 +170,15 @@ blockquote,
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* color: red; */
+  /* font-family: 'Courier New', Courier, monospace; */
 }
 
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 55px;
+  gap: 11rem;
+  
 }
 
 .nav-link,
@@ -170,6 +188,8 @@ blockquote,
   letter-spacing: 0.22em;
   text-transform: uppercase;
   transition: opacity 0.3s ease;
+  /* color: red; */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-link:hover,
@@ -347,10 +367,11 @@ blockquote,
   grid-template-columns: 7fr 5fr;
   gap: 30px;
   padding-bottom: 55px;
+  margin-top: 6rem;
 }
 
 .hero-heading h1 {
-  font-size: clamp(55px, 6vw, 75px);
+  /* font-size: clamp(55px, 6vw, 75px); */
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.03em;
@@ -389,7 +410,7 @@ blockquote,
 }
 
 .statement-content {
-  max-width: 1100px;
+  max-width: 980px;
 }
 
 .statement-content .section-label {
