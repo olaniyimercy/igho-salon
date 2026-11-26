@@ -94,6 +94,8 @@ blockquote,
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 23px;
 }
 
 .light-label {
@@ -344,7 +346,7 @@ blockquote,
 }
 
 .hero-image-left {
-  width: 100%;
+  width: 94%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: #f0f0f0;
@@ -367,12 +369,14 @@ blockquote,
   grid-template-columns: 7fr 5fr;
   gap: 30px;
   padding-bottom: 55px;
-  margin-top: 6rem;
+  margin-top: 5rem;
+  align-items: end;
 }
 
 .hero-heading h1 {
-  /* font-size: clamp(55px, 6vw, 75px); */
-  font-weight: 400;
+  font-size: 60px;
+  font-family: none;
+  font-weight: lighter;
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
@@ -410,16 +414,22 @@ blockquote,
 }
 
 .statement-content {
-  max-width: 980px;
+  max-width: 800px;
+}
+
+.statement-content p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 23px;
 }
 
 .statement-content .section-label {
   margin-bottom: 10px;
 }
 
-.statement-content h2 {
-  font-size: clamp(35px, 4vw, 55px);
-  font-weight: 400;
+.statement-content .text {
+  font-size: 44px;
+  font-family: none;
+  font-weight: lighter;
   line-height: 1.18;
   letter-spacing: -0.02em;
 }
@@ -436,7 +446,7 @@ blockquote,
 }
 
 .section-heading {
-  padding: 0px 20px;
+  padding: 0px;
   margin-bottom: 60px;
 }
 
@@ -453,7 +463,7 @@ blockquote,
 }
 
 .service-image {
-  width: 100%;
+  width: 97%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #f0f0f0;
@@ -472,19 +482,22 @@ blockquote,
 }
 
 .service-title span {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
   font-size: 18px;
-  color: #666;
+  color: #000;
 }
 
 .service-title h3 {
   font-size: 25px;
   font-weight: 400;
+  font-family: none;
 }
 
 .service-item > p {
-  font-size: 19px;
-  color: #555;
+  font-size: 16px;
+  font-family: none;
+  color: #000;
   line-height: 1.3;
 }
 
@@ -525,9 +538,10 @@ blockquote,
 }
 
 .space-content h2 {
-  font-size: clamp(35px, 3.8vw, 54px);
+  font-size: 45px;
+  font-family: none;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1;
 }
 
 /* =========================================
@@ -560,20 +574,23 @@ blockquote,
 }
 
 .testimonial-title span {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
-  color: #666;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
 }
 
 .testimonial-title h3 {
   font-size: 24px;
   font-weight: 400;
+  font-family: none;
 }
 
 .testimonial blockquote {
   font-size: 22px;
-  line-height: 1.5;
-  color: #333;
+  font-family: none;
+  line-height: 1.2;
+  color: #000;
 }
 
 /* =========================================
@@ -606,14 +623,25 @@ blockquote,
 }
 
 .extend {
-  aspect-ratio: 1/ 1.5;
+  aspect-ratio: 1/ 1.38;
+}
+
+.last {
+  aspect-ratio: 0.9 / .9;
 }
 
 .gallery-caption {
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
-  font-size: 23px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.gallery-caption p {
+  font-family: none;
+  font-weight: 100;
 }
 
 /* =========================================
@@ -621,7 +649,6 @@ blockquote,
 ========================================= */
 
 .main-footer {
-  border-top: 1px solid #eee;
   padding: 90px 0 45px;
 }
 
@@ -637,8 +664,8 @@ blockquote,
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 45px;
+  grid-template-columns: repeat(2, 0.2fr);
+  gap: 0px;
   padding-bottom: 90px;
 }
 
@@ -646,8 +673,8 @@ blockquote,
 .footer-grid a {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
-  line-height: 1.4;
+  font-size: 17px;
+  line-height: 1.2;
 }
 
 .footer-links {
