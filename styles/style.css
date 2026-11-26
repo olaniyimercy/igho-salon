@@ -138,7 +138,7 @@ blockquote,
    3. HEADER
 ========================================= */
 .main-header {
-  position: fixedgit ;
+  position: fixed ;
   top: 0;
   left: 0;
   width: 100%;
